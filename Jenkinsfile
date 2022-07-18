@@ -10,6 +10,8 @@ echo "Build number is: ${env.BUILD_NUMBER}"
 
 
 try{
+sendSlackNotifications('STARTED')
+    
 stage('CheckoutCode')
 {
 git branch: 'development', credentialsId: '56852f69-6a47-421e-8bbe-7275ec1b6a7f', url: 'https://github.com/venkateshbs723/maven-web-application.git'
