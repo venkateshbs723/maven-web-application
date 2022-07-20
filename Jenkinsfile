@@ -21,6 +21,11 @@ stage('Build')
 {
 sh "${mavenHome}/bin/mvn clean package"
 }
+    
+stage('TriggerDownstreamJob'){
+ build Job: 'Pipeline pipelinescriptwithbuildparameters'   
+}
+        
 /*
 stage('ExecuteSonarQubeReport')
 {
@@ -39,6 +44,7 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@17
 }
 
 }
+
 */
 }catch(e){
 currentBuild.result = "FAILED"
