@@ -61,7 +61,7 @@ sendSlackNotifications(currentBuild.result)
 //Belode code will use for send slack build notifications
 
 def sendSlackNotifications(String buildStatus = 'STARTED') {
-  // build status of null means successful
+    
   buildStatus =  buildStatus ?: 'SUCCESS'
 
   // Default values
