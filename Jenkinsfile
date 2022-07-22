@@ -1,3 +1,5 @@
+
+
 node('nodes'){   
     
 def mavenHome = tool name: "maven3.8.5"
@@ -22,7 +24,7 @@ stage('Build')
 sh "${mavenHome}/bin/mvn clean package"
 }
     
-stage('TriggerDownstreamJob'){
+stages('TriggerDownstreamJob'){
  build Job: 'Pipeline pipelinescriptwithbuildparameters'   
 }
         
