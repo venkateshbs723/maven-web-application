@@ -83,7 +83,7 @@ def sendSlackNotifications(String buildStatus = 'STARTED') {
   }
 
   // Send notifications
-  slackSend (color: colorCode, message: summary, channel:'walmart')
+  slackSend (color: colorCode, message: summary, channel: 'walmart')
 }
 
 
