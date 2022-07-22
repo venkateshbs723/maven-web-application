@@ -24,7 +24,7 @@ stage('Build')
 sh "${mavenHome}/bin/mvn clean package"
 }
     
-stages('TriggerDownstreamJob'){
+stage('TriggersDownstreamJob'){
  build Job: 'Pipeline pipelinescriptwithbuildparameters'   
 }
         
